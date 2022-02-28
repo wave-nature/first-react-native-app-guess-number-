@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, SafeAreaView } from "react-native";
 import * as Font from "expo-font";
 import AppLoading from "expo-app-loading";
 import Header from "./components/Header";
@@ -45,7 +45,7 @@ class App extends React.Component {
       );
     }
     return (
-      <View style={styles.screen}>
+      <SafeAreaView style={styles.screen}>
         <Header title="Guess a number" />
         {this.state.userNum && this.state.guessRounds <= 0 ? (
           <GameScreen
@@ -61,7 +61,7 @@ class App extends React.Component {
         ) : (
           <StartGameScreen startGame={this.startGameHandler} />
         )}
-      </View>
+      </SafeAreaView>
     );
   }
 }
